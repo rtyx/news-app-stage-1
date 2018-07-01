@@ -6,42 +6,42 @@ package com.example.android.news_app_stage_1;
 
 public class Article {
 
-    private String mSectionName;
-    private String mWebPublicationDate;
-    private String mWebTitle;
-    private String mWebUrl;
-    private String mAuthor;
+    private String sectionName;
+    private String webPublicationDate;
+    private String webTitle;
+    private String webUrl;
+    private String author;
 
     Article(String sectionName,
             String webTitle,
             String webPublicationDate,
             String webUrl,
             String author) {
-        mSectionName = sectionName;
-        mWebPublicationDate = webPublicationDate;
-        mWebTitle = webTitle;
-        mWebUrl = webUrl;
-        mAuthor = author;
+        this.sectionName = sectionName;
+        this.webPublicationDate = webPublicationDate;
+        this.webTitle = webTitle;
+        this.webUrl = webUrl;
+        this.author = author;
     }
 
-    public String getmSectionName() {
-        return mSectionName;
+    public String getSectionName() {
+        return sectionName;
     }
 
-    public String getmWebPublicationDate() {
-        return mWebPublicationDate;
+    public String getWebPublicationDate() {
+        return webPublicationDate;
     }
 
-    public String getmWebTitle() {
-        return mWebTitle;
+    public String getWebTitle() {
+        return webTitle;
     }
 
-    public String getmWebUrl() {
-        return mWebUrl;
+    public String getWebUrl() {
+        return webUrl;
     }
 
-    public String getmAuthor() {
-        return mAuthor;
+    public String getAuthor() {
+        return author;
     }
 
 }

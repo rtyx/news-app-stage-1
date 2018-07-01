@@ -44,7 +44,7 @@ public class ArticlesActivity extends AppCompatActivity implements LoaderManager
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Article currentArticle = (Article) adapter.getItem(i);
-                Uri articleWebUrl = Uri.parse(currentArticle.getmWebUrl());
+                Uri articleWebUrl = Uri.parse(currentArticle.getWebUrl());
                 Intent websiteIntent = new Intent(Intent.ACTION_VIEW, articleWebUrl);
                 startActivity(websiteIntent);
             }
@@ -52,6 +52,8 @@ public class ArticlesActivity extends AppCompatActivity implements LoaderManager
 
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        emptyStateTextView = (TextView) findViewById(R.id.empty_view);
 
         if (networkInfo != null && networkInfo.isConnected()) {
             android.app.LoaderManager loaderManager = getLoaderManager();
@@ -62,7 +64,6 @@ public class ArticlesActivity extends AppCompatActivity implements LoaderManager
             emptyStateTextView.setText(R.string.no_internet_connection);
         }
 
-        emptyStateTextView = (TextView) findViewById(R.id.empty_view);
         articlesListView.setEmptyView(emptyStateTextView);
     }
 
